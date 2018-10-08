@@ -103,4 +103,15 @@ $('document').ready(function() {
     $('.blog .no_vis').css({'display': 'flex'});
     $('.blog .button').css({'display': 'none'})
   });
+
+  //функция прокрутки на блок страницы при клике по элементам меню
+  $('.smoothScroll').click(function (event) {
+    event.preventDefault();
+    var href = $(this).attr('href');
+    var target = $(href);
+    var top = target.offset().top;
+    $('html,body').animate({scrollTop: top}, 1000);
+    return false;
+  });
+
 });
